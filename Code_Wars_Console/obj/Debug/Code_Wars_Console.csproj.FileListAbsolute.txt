@@ -1,0 +1,7 @@
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\bin\Debug\Code_Wars_Console.exe.config
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\bin\Debug\Code_Wars_Console.exe
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\bin\Debug\Code_Wars_Console.pdb
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\obj\Debug\Code_Wars_Console.csproj.AssemblyReference.cache
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\obj\Debug\Code_Wars_Console.csproj.CoreCompileInputs.cache
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\obj\Debug\Code_Wars_Console.exe
+C:\Users\17654\source\repos\Code_Wars_MsTests\Code_Wars_Console\obj\Debug\Code_Wars_Console.pdb
