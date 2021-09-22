@@ -14,10 +14,7 @@ namespace Code_Wars_MsTests
             _console = new CodeWarsUI();
         }
 
-
-
         //Testing Perfect Squares
-
         [TestMethod]
         public void ShouldReturnTrue()
         {
@@ -64,5 +61,34 @@ namespace Code_Wars_MsTests
         //}
 
 
+        //Test for triangle (just has to be greater than 0)
+
+        [TestMethod]
+        public void IsTriangle()
+        {
+            Assert.AreEqual(true, _console.IsTriangle(1, 2, 3));
+            Assert.AreEqual(true, _console.IsTriangle(8, 9, -1));
+        }
+
+        [TestMethod]
+        public void IsNotTriangle()
+        {
+            Assert.AreEqual(false, _console.IsTriangle(-1, 0, -2));
+            Assert.AreEqual(false, _console.IsTriangle(-7, 5, -20));
+        }
+
+        //[TestMethod]
+        //public void FailTriangleTest()
+        //{
+        //    Assert.AreEqual(true, _console.IsTriangle(-1, 0, -9), "You should see me pop up");
+        //}
+
+        [TestMethod]
+        public void XandOTester()
+        {
+            Assert.IsTrue(_console.XorOTester("XXXooo"));
+            Assert.IsTrue(_console.XorOTester("XxXjgkooo"));
+            Assert.IsTrue(_console.XorOTester("fffff"));
+        }
     }
 }

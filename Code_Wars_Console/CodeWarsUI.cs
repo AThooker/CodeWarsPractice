@@ -12,7 +12,10 @@ namespace Code_Wars_Console
         {
             CodeWarsUI console = new CodeWarsUI();
             //Console.WriteLine(console.IsSquare(25));
-            Console.WriteLine(console.AddBinarySum(3,4));
+            //Console.WriteLine(console.AddBinarySum(3,4));
+            //Console.WriteLine(console.IsTriangle(1,2,3));
+            //Console.WriteLine(console.DuplicateEncode("abnsoooo"));
+            Console.WriteLine(console.XorOTester("jfal;gjjg"));
             Console.ReadLine();
         }
         public bool IsSquare(int n)
@@ -20,6 +23,8 @@ namespace Code_Wars_Console
             //Is n square or nah
             return Math.Sqrt(n) % 1 == 0;
         }
+
+        //Take in two integers and return their sum in binary value (i.e. 4,6 would return 1010)
         public string AddBinarySum(int x, int y)
         {
             //int sum = x + y;
@@ -27,6 +32,7 @@ namespace Code_Wars_Console
             //return binaryNum;
             return Convert.ToString(x + y, 2);
         }
+
         //if friend has 4 letters in their name, return a list with their name on it
         public IEnumerable<string> FriendOrFoe(string[] names)
         {
@@ -40,5 +46,45 @@ namespace Code_Wars_Console
             }
             return friends;
         }
+
+        //Takes in three int, return true if triangle can be built with sides of given int's, must be greater than 0
+        public bool IsTriangle(int a, int b, int c)
+        {
+            return (a + b > c && a + c > b && b + c > a);
+            //if(a <= 0 || b <= 0 || c <= 0)
+            //{
+            //    return false;
+            //}
+            //return a + b > c && a + c > b && b + c > a;
+        }
+
+        //convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string
+        public string DuplicateEncode(string word)
+        {
+            return new string(word.ToLower().Select(ch => word.ToLower().Count(innerCh => ch == innerCh) == 1 ? '(' : ')').ToArray());
+        }
+
+        //Method to test if string has the same amount of X's and O's. Case insensitive and string can contain any char
+
+        public bool XorOTester(string input)
+        {
+            return input.ToLower().Count(x => x == 'x') == input.ToLower().Count(o => o == 'o');
+            //int xCount = 0;
+            //int oCount = 0;
+            //string lowInput = input.ToLower();
+            //foreach (char letter in lowInput)
+            //{
+            //    if (letter == 'x')
+            //    {
+            //        xCount += 1;
+            //    }
+            //    else if (letter == 'o')
+            //    {
+            //        oCount += 1;
+            //    }
+            //}
+            //return xCount == oCount;
+        }
+
     }
 }
