@@ -90,5 +90,22 @@ namespace Code_Wars_MsTests
             Assert.IsTrue(_console.XorOTester("XxXjgkooo"));
             Assert.IsTrue(_console.XorOTester("fffff"));
         }
+
+
+        //Isogram Tests
+        [TestMethod]
+        public void IsIsogramTestForFalse()
+        {
+            Assert.IsFalse(_console.IsIsogram("aaa"));
+            Assert.IsFalse(_console.IsIsogram("    "));
+            Assert.IsFalse(_console.IsIsogram("WonderIfThisWillwork"));
+        }
+        [TestMethod]
+        public void TestIsogramForTrue()
+        {
+            Assert.IsTrue(_console.IsIsogram("asdfghjk"));
+            Assert.IsTrue(_console.IsIsogram("mnvb"));
+            Assert.IsTrue(_console.IsIsogram("mnb hjl"));
+        }
     }
 }

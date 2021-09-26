@@ -15,7 +15,11 @@ namespace Code_Wars_Console
             //Console.WriteLine(console.AddBinarySum(3,4));
             //Console.WriteLine(console.IsTriangle(1,2,3));
             //Console.WriteLine(console.DuplicateEncode("abnsoooo"));
-            Console.WriteLine(console.XorOTester("jfal;gjjg"));
+            //Console.WriteLine(console.XorOTester("jfal;gjjg"));
+            //Console.WriteLine(console.IsIsogram("shouldGiveUsFalse"));
+            string[] walkDirections = { "n", "s", "n", "s", "n", "s", "n", "s", "n", "n"};
+            Console.WriteLine(walkDirections.Length);
+            Console.WriteLine(console.WalkChallenge(walkDirections));
             Console.ReadLine();
         }
         public bool IsSquare(int n)
@@ -84,6 +88,42 @@ namespace Code_Wars_Console
             //    }
             //}
             //return xCount == oCount;
+        }
+
+        //Test if string is isogram (word or string containing only unique characters)
+
+        public bool IsIsogram(string str)
+        {
+            return str.ToLower().Distinct().Count() < str.Length ? true : false;
+            //char[] lowerString = str.ToLower().ToCharArray();
+            //foreach (char letter in lowerString)
+            //{
+            //    int count = 0;
+            //    for (int i = 0; i < lowerString.Length - 1; i++)
+            //    {
+            //        if (letter == lowerString[i])
+            //        {
+            //            count++;
+            //            if (count > 1)
+            //            {
+            //                return false;
+            //            }
+            //        }
+            //    }
+            //}
+            //return true;
+        }
+
+        //Take in a string array of one letter words representing directions, each directions takes one minute to walk, determine if the walk takes exactly 10 minutes, if so, return true. You have to end up back at the same place (there has to be the same amount of norths as souths, same for easts/wests
+        public bool WalkChallenge(string[] walk)
+        {
+            int northCount = walk.Count(n => n == "n");
+            int southCount = walk.Count(s => s == "s");
+            int eastCount = walk.Count(e => e == "e");
+            int westCount = walk.Count(w => w == "w");
+
+            return northCount == southCount && eastCount == westCount && walk.Length == 10;
+
         }
 
     }
