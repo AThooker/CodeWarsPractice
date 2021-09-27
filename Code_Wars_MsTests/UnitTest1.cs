@@ -107,5 +107,19 @@ namespace Code_Wars_MsTests
             Assert.IsTrue(_console.IsIsogram("mnvb"));
             Assert.IsTrue(_console.IsIsogram("mnb hjl"));
         }
+
+        //Test HighAndLow (should return highest and lowest values of string)
+        [TestMethod]
+        public void HighAndLowShouldReturnEqual()
+        {
+            Assert.AreEqual("9, 1", _console.HighAndLow("1 2 3 4 5 6 7 8 9"));
+            Assert.AreEqual(("100, -2"), _console.HighAndLow("3 4 7 -2 100 96"));
+        }
+        [TestMethod]
+        public void HighAndLowShouldReturnAreNotEqual()
+        {
+            Assert.AreNotEqual("-1, 9", _console.HighAndLow("1 2 3 4 5 9 -1"));
+            Assert.AreNotEqual("90, 5", _console.HighAndLow("4 5 6 67 74 90 92"));
+        }
     }
 }

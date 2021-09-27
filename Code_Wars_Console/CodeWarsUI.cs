@@ -17,9 +17,10 @@ namespace Code_Wars_Console
             //Console.WriteLine(console.DuplicateEncode("abnsoooo"));
             //Console.WriteLine(console.XorOTester("jfal;gjjg"));
             //Console.WriteLine(console.IsIsogram("shouldGiveUsFalse"));
-            string[] walkDirections = { "n", "s", "n", "s", "n", "s", "n", "s", "n", "n"};
-            Console.WriteLine(walkDirections.Length);
-            Console.WriteLine(console.WalkChallenge(walkDirections));
+            //string[] walkDirections = { "n", "s", "n", "s", "n", "s", "n", "s", "n", "n"};
+            //Console.WriteLine(walkDirections.Length);
+            //Console.WriteLine(console.WalkChallenge(walkDirections));
+            Console.WriteLine(console.HighAndLow("1 3 9 4 5 -5 -50 347 25"));
             Console.ReadLine();
         }
         public bool IsSquare(int n)
@@ -124,6 +125,20 @@ namespace Code_Wars_Console
 
             return northCount == southCount && eastCount == westCount && walk.Length == 10;
 
+        }
+
+        //Given string of spaced numbers, have to return highest and lowest in a new string, output must be two numbers separated by single space (highest num first)
+
+        public string HighAndLow(string numbers)
+        {
+            //Kata answer below just performs code lines 135/136 together
+            string[] newStringArray = numbers.Split(' ');
+            int[] intArray = Array.ConvertAll(newStringArray, s => int.Parse(s));
+            return $"{intArray.Max()} {intArray.Min()}";
+
+            //Kata answer
+            //var splitAndParsed = numbers.Split().Select(int.Parse);
+            //return splitAndParsed.Max() + " " + splitAndParsed.Min();
         }
 
     }
