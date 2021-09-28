@@ -20,7 +20,8 @@ namespace Code_Wars_Console
             //string[] walkDirections = { "n", "s", "n", "s", "n", "s", "n", "s", "n", "n"};
             //Console.WriteLine(walkDirections.Length);
             //Console.WriteLine(console.WalkChallenge(walkDirections));
-            Console.WriteLine(console.HighAndLow("1 3 9 4 5 -5 -50 347 25"));
+            //Console.WriteLine(console.HighAndLow("1 3 9 4 5 -5 -50 347 25"));
+            Console.WriteLine(console.PrinterError("AAAAZZAAAA"));
             Console.ReadLine();
         }
         public bool IsSquare(int n)
@@ -141,5 +142,32 @@ namespace Code_Wars_Console
             //return splitAndParsed.Max() + " " + splitAndParsed.Min();
         }
 
+        //In a factory a printer prints labels for boxes. For one kind of boxes the printer has to use colors which, for the sake of simplicity, are named with letters from a to m.
+
+        //        The colors used by the printer are recorded in a control string. For example a "good" control string would be aaabbbbhaijjjm meaning that the printer used three times color a, four times color b, one time color h then one time color a...
+
+        //Sometimes there are problems: lack of colors, technical malfunction and a "bad" control string is produced e.g.aaaxbbbbyyhwawiwjjjwwm with letters not from a to m.
+
+        //You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+        public string PrinterError(string s)
+        {
+            //string lowerString = s.ToLower().Trim();
+            //string colorLettersString = "abcdefghijkm";
+            ////var colorLettersChar = colorLettersString.ToCharArray();
+            //int count = 0;
+            //for(int i = 0; i < s.Length - 1; i++)
+            //{
+            //    if(!colorLettersString.Contains(lowerString[i]))
+            //    {
+            //        count++;
+            //    }
+            //}
+            //return count + "/" + s.Length;
+            return s.Where(c => c > 'm').Count() + "/" + s.Length;
+        }
+
+
+
+        
     }
 }

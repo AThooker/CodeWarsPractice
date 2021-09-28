@@ -121,5 +121,17 @@ namespace Code_Wars_MsTests
             Assert.AreNotEqual("-1, 9", _console.HighAndLow("1 2 3 4 5 9 -1"));
             Assert.AreNotEqual("90, 5", _console.HighAndLow("4 5 6 67 74 90 92"));
         }
+
+        //Test Printer Error
+        [TestMethod]
+        public void PrinterErrorShouldBeNoErrors()
+        {
+            Assert.AreEqual("0/5", _console.PrinterError("aacde"));
+        }
+        [TestMethod]
+        public void PrinterErrorShouldHaveAllErrors()
+        {
+            Assert.AreEqual("5/5", _console.PrinterError("';';z"));
+        }
     }
 }
